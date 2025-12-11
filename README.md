@@ -1,1 +1,3 @@
-# todo: write README
+# Config Files
+
+Used for Mirror|rorriM configs.
