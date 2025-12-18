@@ -28,7 +28,7 @@ jobs:
         run: |
           NEW_VERSION=$(cat /tmp/new-version.txt)
           echo "New version: '$NEW_VERSION'"
-          echo "VERSION=$NEW_VERSION" >> $GITHUB_ENV
+          echo "VERSION=${NEW_VERSION}" >> "$GITHUB_ENV"
 
       - name: Update action files
         run: |
