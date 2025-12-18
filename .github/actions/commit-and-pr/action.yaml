@@ -1,0 +1,65 @@
+name: Commit and Create PR
+description: Commits changes and creates a pull request
+
+inputs:
+  branch:
+    description: Branch name
+    required: true
+  commit-message:
+    description: Commit message
+    required: true
+  pr-title:
+    description: Pull request title
+    required: true
+  pr-body:
+    description: Pull request body
+    required: true
+  token:
+    description: GitHub token
+    required: true
+  base-branch:
+    description: Base branch for PR
+    required: false
+    default: master
+
+runs:
+  using: composite
+  steps:
+    - name: Check for changes
+      id: compare
+      shell: bash
+      run: |
+        if git diff -s --exit-code; then
+          echo "update_needed=false" >> $GITHUB_OUTPUT
+        else
+          echo "update_needed=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Setup Git identity
+      if: steps.compare.outputs.update_needed == 'true'
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Commit and push changes
+      if: steps.compare.outputs.update_needed == 'true'
+      shell: bash
+      run: |
+        git checkout -b "${{ inputs.branch }}" || true
+        git commit -am "${{ inputs.commit-message }}"
+        git pull origin "${{ inputs.branch }}" --no-edit --rebase=true -X ours || true
+        git push origin "${{ inputs.branch }}"
+
+    - name: Create Pull Request
+      if: steps.compare.outputs.update_needed == 'true'
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+      shell: bash
+      run: |
+        gh pr create \
+          --title "${{ inputs.pr-title }}" \
+          --body "${{ inputs.pr-body }}" \
+          --head "${{ inputs.branch }}" \
+          --base "${{ inputs.base-branch }}" \
+        || true

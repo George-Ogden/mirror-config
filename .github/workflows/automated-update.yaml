@@ -1,0 +1,72 @@
+name: Automated Update
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+
+jobs:
+  update-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Clone actions repository
+        run: |
+          git clone https://github.com/George-Ogden/actions.git /tmp/external-repo
+          cp /tmp/external-repo/version.txt /tmp/new-version.txt
+
+      - name: Read new version
+        run: |
+          NEW_VERSION=$(cat /tmp/new-version.txt)
+          echo "New version: '$NEW_VERSION'"
+          echo "VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+      - name: Update action files
+        run: |
+          find .github -name "*.yaml" -exec sed -i "/George-Ogden\/actions\/.github\/workflows/s/@.*$/@v${{ env.VERSION }}/" {} \;
+
+      - name: Create PR
+        uses: ./.github/actions/commit-and-pr
+        with:
+          branch: "update-version-${{ env.VERSION }}"
+          commit-message: "Automated actions version change"
+          pr-title: "Automated Actions Version Sync"
+          pr-body: "Update actions version to ${{ env.VERSION }}"
+          token: ${{ secrets.PAT_TOKEN }}
+
+  autoupdate-pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Python dependencies
+        run: |
+          pip install uv
+          uv tool install pre-commit --with pre-commit-uv
+
+      - name: Run pre-commit autoupdate
+        run: pre-commit autoupdate -c python.pre-commit-config.yaml
+
+      - name: Create PR
+        uses: ./.github/actions/commit-and-pr
+        with:
+          branch: pre-commit-autoupdate
+          commit-message: "Automated pre-commit autoupdate"
+          pr-title: "Automated Pre-Commit Autoupdate"
+          pr-body: "Autoupdate pre-commit"
+          token: ${{ secrets.PAT_TOKEN }}
