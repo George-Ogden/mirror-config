@@ -17,13 +17,13 @@ repos:
       - id: requirements-txt-fixer
 
   - repo: https://github.com/George-Ogden/linter/
-    rev: v1.2.0
+    rev: v1.2.1
     hooks:
       - id: lint
         args: [--fix]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit/
-    rev: v0.14.8
+    rev: v0.14.10
     hooks:
       - id: ruff-format
       - id: ruff-check
@@ -31,7 +31,7 @@ repos:
           - --fix
 
   - repo: https://github.com/pre-commit/mirrors-prettier/
-    rev: v3.1.0
+    rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
         additional_dependencies: [prettier]
