@@ -20,6 +20,8 @@ repos:
     rev: v1.7.9
     hooks:
       - id: actionlint
+        files: ^\.github/
+        exclude: ^\.github/actions/
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks
     rev: v2.0.3
