@@ -22,11 +22,10 @@ jobs:
       - name: Clone actions repository
         run: |
           git clone https://github.com/George-Ogden/actions.git /tmp/external-repo
-          cp /tmp/external-repo/version.txt /tmp/new-version.txt
 
       - name: Read new version
         run: |
-          NEW_VERSION=$(cat /tmp/new-version.txt)
+          NEW_VERSION=$(cat /tmp/external-repo/version.txt)
           echo "New version: '$NEW_VERSION'"
           echo "VERSION=${NEW_VERSION}" >> "$GITHUB_ENV"
 
