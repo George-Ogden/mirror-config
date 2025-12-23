@@ -20,7 +20,7 @@ repos:
       - id: requirements-txt-fixer
 
   - repo: https://github.com/George-Ogden/linter/
-    rev: v1.2.1
+    rev: v1.2.2
     hooks:
       - id: lint
         args: [--fix]
@@ -51,7 +51,7 @@ repos:
       - id: actionlint
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v2.0.4
+    rev: v2.1.0
     hooks:
       - id: check-merge-conflict
       - id: dbg-check
