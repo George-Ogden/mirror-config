@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v5
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Clone actions repository
         run: |
@@ -59,7 +57,9 @@ jobs:
           uv tool install pre-commit --with pre-commit-uv
 
       - name: Run pre-commit autoupdate
-        run: pre-commit autoupdate -c python.pre-commit-config.yaml
+        run: |
+          pre-commit autoupdate
+          pre-commit autoupdate -c python.pre-commit-config.yaml
 
       - name: Create PR
         uses: ./.github/actions/commit-and-pr
