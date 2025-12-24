@@ -46,6 +46,14 @@ runs:
       shell: bash
       run: git remote get-url origin
 
+    - name: Test push permissions
+      shell: bash
+      run: |
+        curl -X GET \
+          -H "Authorization: token ${{ inputs.token }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/collaborators/${{ github.actor }}/permission
+
     - name: Commit and push changes
       if: steps.compare.outputs.update_needed == 'true'
       shell: bash
@@ -53,7 +61,9 @@ runs:
         git checkout -b "${{ inputs.branch }}" || true
         git commit -am "${{ inputs.commit-message }}"
         git pull origin "${{ inputs.branch }}" --no-edit --rebase=true -X ours || true
-        git push https://x-access-token:${{ inputs.token }}@github.com/${{ github.repository }} "${{ inputs.branch }}"
+        git remote set-url origin https://x-access-token:${{ inputs.token }}@github.com/${{ github.repository }}.git
+        git remote -v
+        git push origin "${{ inputs.branch }}"
 
     - name: Create Pull Request
       if: steps.compare.outputs.update_needed == 'true'
