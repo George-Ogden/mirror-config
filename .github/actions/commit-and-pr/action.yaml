@@ -42,6 +42,10 @@ runs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
 
+    - name: Check remote
+      shell: bash
+      run: git remote get-url origin
+
     - name: Commit and push changes
       if: steps.compare.outputs.update_needed == 'true'
       shell: bash
