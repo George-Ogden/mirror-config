@@ -49,7 +49,7 @@ runs:
         git checkout -b "${{ inputs.branch }}" || true
         git commit -am "${{ inputs.commit-message }}"
         git pull origin "${{ inputs.branch }}" --no-edit --rebase=true -X ours || true
-        git push origin "${{ inputs.branch }}"
+        git push https://x-access-token:${{ inputs.token }}@github.com/${{ github.repository }} "${{ inputs.branch }}"
 
     - name: Create Pull Request
       if: steps.compare.outputs.update_needed == 'true'
