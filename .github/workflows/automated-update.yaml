@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
   issues: read
@@ -16,6 +17,8 @@ jobs:
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Clone actions repository
         run: |
