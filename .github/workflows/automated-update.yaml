@@ -63,6 +63,7 @@ jobs:
         run: |
           pre-commit autoupdate
           pre-commit autoupdate -c python.pre-commit-config.yaml
+          pre-commit autoupdate -c rust.pre-commit-config.yaml
 
       - name: Create PR
         uses: ./.github/actions/commit-and-pr
