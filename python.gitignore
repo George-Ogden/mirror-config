@@ -192,3 +192,6 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
+
+### Pre-Commit Prettier ###
+node_modules/

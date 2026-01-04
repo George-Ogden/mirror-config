@@ -20,3 +20,6 @@ nohup*
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+### Pre-Commit Prettier ###
+node_modules/
