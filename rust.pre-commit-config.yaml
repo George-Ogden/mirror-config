@@ -2,7 +2,10 @@ default_stages: ["pre-commit"]
 default_install_hook_types: ["pre-commit", "commit-msg"]
 
 ci:
-  skip: [mirror-check]
+  skip: [mirror-check, fmt, cargo-check, clippy]
+
+default_language_version:
+  rust: nightly
 
 repos:
   - repo: https://github.com/George-Ogden/mirror-rorrim/
@@ -33,6 +36,18 @@ repos:
     rev: v1.7.10
     hooks:
       - id: actionlint
+
+  - repo: https://github.com/FeryET/pre-commit-rust
+    rev: v1.2.1
+    hooks:
+      - id: fmt
+      - id: cargo-check
+      - id: clippy
+        name: clippy fix
+        args: [--fix, --allow-staged, --allow-dirty]
+      - id: clippy
+        name: clippy check
+        args: [--, -D, warnings]
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
     rev: v2.1.0
