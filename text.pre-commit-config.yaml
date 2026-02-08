@@ -2,7 +2,9 @@ default_stages: [pre-commit]
 default_install_hook_types: [pre-commit, commit-msg]
 
 ci:
-  skip: [mirror-check, no-commit-to-branch]
+  skip:
+    - mirror-check
+    - no-commit-to-branch
 
 repos:
   - repo: https://github.com/George-Ogden/mirror-rorrim/

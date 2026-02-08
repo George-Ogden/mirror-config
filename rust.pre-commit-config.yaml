@@ -2,7 +2,12 @@ default_stages: [pre-commit]
 default_install_hook_types: [pre-commit, commit-msg]
 
 ci:
-  skip: [mirror-check, no-commit-to-branch, fmt, cargo-check, clippy]
+  skip:
+    - mirror-check
+    - no-commit-to-branch
+    - fmt
+    - cargo-check
+    - clippy
 
 default_language_version:
   rust: nightly
