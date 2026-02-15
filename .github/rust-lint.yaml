@@ -10,7 +10,7 @@ on:
 
 jobs:
   lint:
-    uses: George-Ogden/actions/.github/workflows/lint.yaml@v4.0.0
+    uses: George-Ogden/actions/.github/workflows/lint.yaml@v4.0.1
 
   cargo:
     runs-on: ubuntu-24.04
