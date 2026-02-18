@@ -59,7 +59,7 @@ repos:
       - id: codespell
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v2.2.0
+    rev: v2.3.0
     hooks:
       - id: check-merge-conflict
       - id: dbg-check
