@@ -1,5 +1,5 @@
 default_stages: [pre-commit]
-default_install_hook_types: [pre-commit, commit-msg]
+default_install_hook_types: [pre-commit, prepare-commit-msg, commit-msg]
 
 ci:
   skip:
@@ -44,3 +44,4 @@ repos:
       - id: check-merge-conflict
       - id: todo-check
       - id: spell-check-commit-msgs
+      - id: version-txt-auto-msg
