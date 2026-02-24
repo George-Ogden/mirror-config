@@ -57,14 +57,14 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install uv
-          uv tool install pre-commit --with pre-commit-uv
+          uv pip install prek
 
       - name: Run pre-commit autoupdate
         run: |
-          pre-commit autoupdate
-          pre-commit autoupdate -c python.pre-commit-config.yaml
-          pre-commit autoupdate -c rust.pre-commit-config.yaml
-          pre-commit autoupdate -c text.pre-commit-config.yaml
+          prek autoupdate
+          prek autoupdate -c python.pre-commit-config.yaml
+          prek autoupdate -c rust.pre-commit-config.yaml
+          prek autoupdate -c text.pre-commit-config.yaml
 
       - name: Create PR
         uses: ./.github/actions/commit-and-pr
