@@ -28,7 +28,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  - repo: https://github.com/koalaman/shellcheck-precommit
+  - repo: https://github.com/koalaman/shellcheck-precommit/
     rev: v0.11.0
     hooks:
       - id: shellcheck
@@ -44,7 +44,7 @@ repos:
     hooks:
       - id: actionlint
 
-  - repo: https://github.com/FeryET/pre-commit-rust
+  - repo: https://github.com/FeryET/pre-commit-rust/
     rev: v1.2.1
     hooks:
       - id: fmt
@@ -57,7 +57,7 @@ repos:
         args: [--, -D, warnings]
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
       - id: check-merge-conflict
       - id: dbg-check
@@ -67,3 +67,4 @@ repos:
           .gitignore
           )$
       - id: spell-check-commit-msgs
+      - id: mirror-auto-msg

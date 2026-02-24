@@ -2,7 +2,7 @@ default_stages: [pre-commit]
 default_install_hook_types: [pre-commit, commit-msg]
 
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks/
     rev: v6.0.0
     hooks:
       - id: end-of-file-fixer
@@ -10,20 +10,20 @@ repos:
       - id: trailing-whitespace
       - id: requirements-txt-fixer
 
-  - repo: https://github.com/pre-commit/mirrors-prettier
+  - repo: https://github.com/pre-commit/mirrors-prettier/
     rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
 
-  - repo: https://github.com/rhysd/actionlint
+  - repo: https://github.com/rhysd/actionlint/
     rev: v1.7.11
     hooks:
       - id: actionlint
         files: ^\.github/
         exclude: ^\.github/actions/
 
-  - repo: https://github.com/George-Ogden/pre-commit-hooks
-    rev: v2.3.0
+  - repo: https://github.com/George-Ogden/pre-commit-hooks/
+    rev: v2.4.0
     hooks:
       - id: check-merge-conflict
       - id: spell-check-commit-msgs
