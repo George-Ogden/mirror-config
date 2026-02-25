@@ -57,7 +57,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install uv
-          uv pip install prek
+          uv tool install prek
 
       - name: Run pre-commit autoupdate
         run: |
