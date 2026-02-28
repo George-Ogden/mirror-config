@@ -61,5 +61,7 @@ runs:
           --title "${{ inputs.pr-title }}" \
           --body "${{ inputs.pr-body }}" \
           --head "${{ inputs.branch }}" \
-          --base "${{ inputs.base-branch }}" \
-        || true
+          --base "${{ inputs.base-branch }}"  && \
+        gh pr merge \
+          --auto \
+          --merge "${{ inputs.branch }}" || true
