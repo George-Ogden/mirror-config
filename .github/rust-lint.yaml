@@ -1,4 +1,4 @@
-name: Lint
+name: Lint Rust Code with Cargo and Prek
 
 on:
   push:
@@ -9,10 +9,10 @@ on:
       - master
 
 jobs:
-  lint:
+  prek-lint:
     uses: George-Ogden/actions/.github/workflows/lint.yaml@v4.0.1
 
-  cargo:
+  cargo-lint:
     runs-on: ubuntu-24.04
 
     steps:
