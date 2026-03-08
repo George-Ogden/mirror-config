@@ -25,6 +25,7 @@ repos:
       - id: no-commit-to-branch
         fail_fast: true
       - id: end-of-file-fixer
+        exclude: .rs$
       - id: mixed-line-ending
       - id: trailing-whitespace
 
