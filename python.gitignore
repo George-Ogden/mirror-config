@@ -23,6 +23,9 @@ nohup*
 # Built Visual Studio Code Extensions
 *.vsix
 
+### PyCharm ###
+.idea/
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
