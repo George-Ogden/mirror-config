@@ -1,5 +1,5 @@
 [package]
-name = "ARC-rust"
+name = "" # fixme
 version = "0.0.0"
 edition = "2024"
 
