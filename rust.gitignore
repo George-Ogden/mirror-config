@@ -6,6 +6,7 @@ out.txt
 stderr.txt
 err.txt
 notes.txt
+refactor.list
 TODO
 *.pseudo
 *.patch
