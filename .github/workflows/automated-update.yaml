@@ -57,6 +57,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install uv
+          uv pip install pyyaml --system
           uv tool install prek
 
       - name: Run pre-commit autoupdate
@@ -65,6 +66,21 @@ jobs:
           prek autoupdate -c python.pre-commit-config.yaml
           prek autoupdate -c rust.pre-commit-config.yaml
           prek autoupdate -c text.pre-commit-config.yaml
+
+      - name: Update Ruff version in requirements-dev.txt
+        run: |
+          RUFF_VERSION=$(python - <<'EOF'
+          import yaml
+          with open("python.pre-commit-config.yaml") as f:
+              config = yaml.safe_load(f)
+          [ruff_repo] = [repo for repo in config["repos"] if repo["repo"] == "https://github.com/astral-sh/ruff-pre-commit/"]
+          version = ruff_repo["rev"]
+          assert version.startswith("v")
+          print(version.replace("v", "", count=1))
+          EOF
+          )
+
+          sed -i "s/^ruff=.*\$/ruff==$RUFF_VERSION/" requirements-dev.txt
 
       - name: Create PR
         uses: ./.github/actions/commit-and-pr
