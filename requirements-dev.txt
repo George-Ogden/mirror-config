@@ -7,4 +7,4 @@ mypy
 prek
 pytest
 pytest-timeout
-ruff==0.15.4
+ruff==0.15.5
