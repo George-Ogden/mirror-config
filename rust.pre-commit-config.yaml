@@ -58,7 +58,7 @@ repos:
         args: [--, -D, warnings, -W, clippy::pedantic]
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v3.0.0
+    rev: v3.0.1
     hooks:
       - id: check-merge-conflict
       - id: dbg-check
