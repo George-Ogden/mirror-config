@@ -43,6 +43,10 @@ repos:
     hooks:
       - id: check-merge-conflict
       - id: todo-check
+        exclude: (?x)^(
+          .pre-commit-config.yaml|
+          .gitignore
+          )$
       - id: spell-check-commit-msgs
       - id: mirror-auto-msg
       - id: version-txt-auto-msg
