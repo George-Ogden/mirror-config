@@ -8,6 +8,8 @@ err.txt
 notes.txt
 refactor.list
 TODO
+profile.svg
+perf.data*
 *.pseudo
 *.patch
 nohup*
