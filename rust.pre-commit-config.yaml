@@ -9,9 +9,6 @@ ci:
     - cargo-check
     - clippy
 
-default_language_version:
-  rust: nightly
-
 repos:
   - repo: https://github.com/George-Ogden/mirror-rorrim/
     rev: v0.4.8
