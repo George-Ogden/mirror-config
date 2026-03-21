@@ -1,5 +1,6 @@
 default_stages: [pre-commit]
-default_install_hook_types: [pre-commit, prepare-commit-msg, commit-msg]
+default_install_hook_types:
+  [pre-commit, prepare-commit-msg, commit-msg, post-commit, pre-push]
 
 ci:
   skip:
