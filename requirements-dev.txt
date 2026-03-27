@@ -5,6 +5,7 @@ git+https://github.com/George-Ogden/pytest-dbg; python_version >= "3.11"
 inline-snapshot
 mypy==1.19.1
 prek
-pytest
+py-spy
+pytest>=9.0.0
 pytest-timeout
 ruff==0.15.8
