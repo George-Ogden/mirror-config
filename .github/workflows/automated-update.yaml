@@ -90,29 +90,3 @@ jobs:
           pr-title: "Automated Pre-Commit Autoupdate"
           pr-body: "Autoupdate pre-commit"
           token: ${{ secrets.PAT_TOKEN }}
-
-  update-mypy-version:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-
-      - name: Update Mypy version in requirements-dev.txt
-        run: |
-          MYPY_VERSION=$(pip index versions --json mypy | jq -r '.latest' | cat)
-          echo "VERSION=${MYPY_VERSION}" >> "$GITHUB_ENV"
-          sed -i "s/^mypy=.*/mypy==$MYPY_VERSION/" requirements-dev.txt
-
-      - name: Create PR
-        uses: ./.github/actions/commit-and-pr
-        with:
-          branch: "update-mypy-version-${{ env.VERSION }}"
-          commit-message: "Automated mypy version update"
-          pr-title: "Automated Mypy Version Sync"
-          pr-body: "Update mypy version to ${{ env.VERSION }}"
-          token: ${{ secrets.PAT_TOKEN }}
