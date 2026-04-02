@@ -10,4 +10,5 @@ repos:
       - src/main.rs: main.rs
       - LICENSE
       - Cargo.toml
+      - Cargo.lock
       - clippy.toml
