@@ -52,11 +52,15 @@ repos:
     rev: v1.2.1
     hooks:
       - id: clippy
+        stages: [pre-commit]
         name: clippy fix
         args: [--fix, --allow-staged, --allow-dirty]
       - id: fmt
+        stages: [pre-commit]
       - id: cargo-check
+        stages: [pre-commit]
       - id: clippy
+        stages: [pre-commit]
         name: clippy check
         args: [--, -D, warnings, -W, clippy::pedantic]
 
