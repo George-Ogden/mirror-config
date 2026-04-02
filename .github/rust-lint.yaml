@@ -13,25 +13,6 @@ jobs:
     uses: George-Ogden/actions/.github/workflows/lint.yaml@v4.3.0
 
   cargo-lint:
-    runs-on: ubuntu-24.04
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v5
-
-      - name: Set up Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
-        with:
-          components: clippy, rustfmt
-
-      - name: Check
-        run: |
-          cargo check
-
-      - name: Format
-        run: |
-          cargo fmt
-
-      - name: Lint
-        run: |
-          cargo clippy -- -D warnings -W clippy::pedantic
+    uses: George-Ogden/actions/.github/workflows/rust-lint.yaml@v4.3.0
+    with:
+      rust-version: stable
