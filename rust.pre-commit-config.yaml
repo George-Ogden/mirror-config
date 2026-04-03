@@ -54,7 +54,7 @@ repos:
       - id: clippy
         stages: [pre-commit]
         name: clippy fix
-        args: [--fix, --allow-staged, --allow-dirty]
+        args: [--fix, --allow-staged, --allow-dirty, --all-targets]
       - id: fmt
         stages: [pre-commit]
       - id: cargo-check
@@ -63,6 +63,10 @@ repos:
         stages: [pre-commit]
         name: clippy check
         args: [--, -D, warnings, -W, clippy::pedantic]
+      - id: clippy
+        stages: [pre-commit]
+        name: clippy all
+        args: [--all-targets, --, -D, warnings]
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
     rev: v3.1.0
