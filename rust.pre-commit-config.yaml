@@ -54,7 +54,16 @@ repos:
       - id: clippy
         stages: [pre-commit]
         name: clippy fix
-        args: [--fix, --allow-staged, --allow-dirty, --all-targets]
+        args:
+          [
+            --fix,
+            --allow-staged,
+            --allow-dirty,
+            --all-targets,
+            --,
+            -A,
+            unused_variables,
+          ]
       - id: fmt
         stages: [pre-commit]
       - id: cargo-check
