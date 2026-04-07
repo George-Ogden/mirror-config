@@ -24,8 +24,11 @@ repos:
         fail_fast: true
       - id: end-of-file-fixer
         exclude: .rs$
+        stages: [pre-commit]
       - id: mixed-line-ending
+        stages: [pre-commit]
       - id: trailing-whitespace
+        stages: [pre-commit]
 
   - repo: https://github.com/koalaman/shellcheck-precommit/
     rev: v0.11.0
