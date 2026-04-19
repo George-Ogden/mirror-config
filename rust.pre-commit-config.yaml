@@ -81,7 +81,7 @@ repos:
         args: [--all-targets, --, -D, warnings]
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v3.1.0
+    rev: v3.1.1
     hooks:
       - id: check-merge-conflict
       - id: dbg-check
