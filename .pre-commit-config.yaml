@@ -2,13 +2,17 @@ default_stages: [pre-commit]
 default_install_hook_types: [pre-commit, commit-msg]
 
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks/
-    rev: v6.0.0
+  - repo: builtin
     hooks:
       - id: end-of-file-fixer
+        stages: [pre-commit]
       - id: mixed-line-ending
+        stages: [pre-commit]
       - id: trailing-whitespace
-      - id: requirements-txt-fixer
+        stages: [pre-commit]
+      - id: check-merge-conflict
+        stages: [pre-commit]
+        args: [--assume-in-merge]
 
   - repo: https://github.com/pre-commit/mirrors-prettier/
     rev: v4.0.0-alpha.8
@@ -25,5 +29,4 @@ repos:
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
     rev: v3.1.1
     hooks:
-      - id: check-merge-conflict
       - id: spell-check-commit-msgs

@@ -17,6 +17,20 @@ repos:
       - id: mirror-check
         fail_fast: true
 
+  - repo: builtin
+    hooks:
+      - id: no-commit-to-branch
+        fail_fast: true
+      - id: end-of-file-fixer
+        stages: [pre-commit]
+      - id: mixed-line-ending
+        stages: [pre-commit]
+      - id: trailing-whitespace
+        stages: [pre-commit]
+      - id: check-merge-conflict
+        stages: [pre-commit]
+        args: [--assume-in-merge]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks/
     rev: v6.0.0
     hooks:
@@ -83,7 +97,6 @@ repos:
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
     rev: v3.1.1
     hooks:
-      - id: check-merge-conflict
       - id: dbg-check
       - id: todo-check
         exclude: (?x)^(
