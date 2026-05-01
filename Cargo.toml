@@ -3,6 +3,11 @@ name = "" # fixme
 version = "0.0.0"
 edition = "2024"
 
+[dependencies]
+ambassador = "0.5.1"
+derive_more = { version = "2.1.1", features = ["full"] }
+itertools = "0.14.0"
+
 [dev-dependencies]
 pretty_assertions = "1.4.1"
 test-case = "3.3.1"
