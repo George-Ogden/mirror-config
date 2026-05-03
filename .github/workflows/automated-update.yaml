@@ -90,3 +90,62 @@ jobs:
           pr-title: "Automated Pre-Commit Autoupdate"
           pr-body: "Autoupdate pre-commit"
           token: ${{ secrets.PAT_TOKEN }}
+
+  update-cargo-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Set up Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Update all packages to latest versions
+        run: |
+          python - <<'EOF'
+          import os
+          import subprocess
+          import tomllib
+
+          with open("Cargo.toml", "rb") as f:
+              cargo_toml = tomllib.load(f)
+
+          for dependency_list in cargo_toml["dependencies"], cargo_toml["dev-dependencies"]:
+              for name, details in dependency_list.items():
+                  old_version = details if isinstance(details, str) else details["version"]
+                  check_cmd = subprocess.run(
+                      f"cargo info {name}",
+                      stdout=subprocess.PIPE,
+                      shell=True,
+                      check=True,
+                      env=os.environ | dict(CARGO_TERM_COLOR="auto"),
+                  )
+                  output = check_cmd.stdout.decode()
+                  print(output)
+                  [version] = [
+                      line.split(":")[1].strip()
+                      for line in output.splitlines()
+                      if line.startswith("version:")
+                  ]
+                  subprocess.run(
+                      f"sed -i Cargo.toml -e '/{name}/s/{old_version.replace('.', r'\.')}/{version}/'",
+                      shell=True,
+                      check=True,
+                  )
+          EOF
+
+      - name: Create PR
+        uses: ./.github/actions/commit-and-pr
+        with:
+          branch: cargo-packages-update
+          commit-message: "Automated cargo packages update"
+          pr-title: "Automated Cargo Packages Update"
+          pr-body: ""
+          token: ${{ secrets.PAT_TOKEN }}
