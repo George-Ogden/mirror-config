@@ -10,6 +10,6 @@ on:
 
 jobs:
   cargo-test:
-    uses: George-Ogden/actions/.github/workflows/rust-test.yaml@v4.3.0
+    uses: George-Ogden/actions/.github/workflows/rust-test.yaml@v4.4.0
     with:
       rust-version: stable
