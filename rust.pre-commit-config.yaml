@@ -105,3 +105,4 @@ repos:
           )$
       - id: spell-check-commit-msgs
       - id: mirror-auto-msg
+      - id: version-txt-auto-msg
