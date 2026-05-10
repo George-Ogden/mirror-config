@@ -27,3 +27,15 @@ resolver = "2"
 
 [lints]
 workspace = true
+
+[workspace.lints.rust]
+warnings = "deny"
+dead_code = "allow"
+
+[workspace.lints.clippy]
+pedantic = { level = "deny", priority = -1 }
+missing_panics_doc = "allow"
+missing_errors_doc = "allow"
+should_panic_without_expect = "allow"
+len_without_is_empty = "allow"
+from_iter_instead_of_collect = "allow"
