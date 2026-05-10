@@ -20,3 +20,10 @@ opt-level = 3
 [profile.bench]
 inherits = "release"
 debug = true
+
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[lints]
+workspace = true
