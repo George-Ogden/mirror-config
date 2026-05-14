@@ -23,6 +23,7 @@ repos:
         fail_fast: true
       - id: end-of-file-fixer
         stages: [pre-commit]
+        exclude: .rs$
       - id: mixed-line-ending
         stages: [pre-commit]
       - id: trailing-whitespace
@@ -30,19 +31,6 @@ repos:
       - id: check-merge-conflict
         stages: [pre-commit]
         args: [--assume-in-merge]
-
-  - repo: https://github.com/pre-commit/pre-commit-hooks/
-    rev: v6.0.0
-    hooks:
-      - id: no-commit-to-branch
-        fail_fast: true
-      - id: end-of-file-fixer
-        exclude: .rs$
-        stages: [pre-commit]
-      - id: mixed-line-ending
-        stages: [pre-commit]
-      - id: trailing-whitespace
-        stages: [pre-commit]
 
   - repo: https://github.com/koalaman/shellcheck-precommit/
     rev: v0.11.0
