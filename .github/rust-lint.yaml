@@ -10,9 +10,9 @@ on:
 
 jobs:
   prek-lint:
-    uses: George-Ogden/actions/.github/workflows/lint.yaml@v4.5.0
+    uses: George-Ogden/actions/.github/workflows/lint.yaml@v4.6.0
 
   cargo-lint:
-    uses: George-Ogden/actions/.github/workflows/rust-lint.yaml@v4.5.0
+    uses: George-Ogden/actions/.github/workflows/rust-lint.yaml@v4.6.0
     with:
       rust-version: stable

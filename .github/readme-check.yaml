@@ -10,6 +10,6 @@ on:
 
 jobs:
   check-readme:
-    uses: George-Ogden/actions/.github/workflows/readme-check.yaml@v4.5.0
+    uses: George-Ogden/actions/.github/workflows/readme-check.yaml@v4.6.0
     with:
       prefix: "rev: v"
