@@ -1,0 +1,13 @@
+rules:
+  - id: repo-without-trailing-slash
+    languages:
+      - yaml
+    severity: ERROR
+    message: Make sure url ends with a trailing slash.
+    patterns:
+      - pattern: |
+          repo: "$URL"
+      - metavariable-regex:
+          metavariable: $URL
+          regex: ^https?://.*[^/]$
+    fix: "repo: $URL/"

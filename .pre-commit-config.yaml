@@ -14,6 +14,22 @@ repos:
         stages: [pre-commit]
         args: [--assume-in-merge]
 
+  - repo: https://github.com/semgrep/pre-commit/
+    rev: v1.163.0
+    hooks:
+      - id: semgrep
+        require_serial: true
+        args:
+          [
+            --config,
+            .semgrep-rules/yaml.yaml,
+            --autofix,
+            --quiet,
+            --error,
+            --skip-unknown-extensions,
+            --disable-version-check,
+          ]
+
   - repo: https://github.com/pre-commit/mirrors-prettier/
     rev: v4.0.0-alpha.8
     hooks:
