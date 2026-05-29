@@ -56,6 +56,22 @@ repos:
     hooks:
       - id: codespell
 
+  - repo: https://github.com/semgrep/pre-commit/
+    rev: v1.164.0
+    hooks:
+      - id: semgrep
+        require_serial: true
+        args:
+          [
+            --config,
+            .semgrep-rules/rust.yaml,
+            --autofix,
+            --quiet,
+            --error,
+            --skip-unknown-extensions,
+            --disable-version-check,
+          ]
+
   - repo: https://github.com/FeryET/pre-commit-rust/
     rev: v1.2.1
     hooks:
