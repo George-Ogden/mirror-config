@@ -1,4 +1,9 @@
 # Specific Files
+logs/
+experiments/
+plot*.pdf
+*.snap.new
+.harper-dictionary.txt
 scratch*
 .merge_file*
 tmp.py

@@ -1,4 +1,6 @@
 # Specific Files
+.harper-dictionary.txt
+plot*.pdf
 scratch*
 .merge_file*
 tmp.py
