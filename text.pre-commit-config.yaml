@@ -47,7 +47,7 @@ repos:
       - id: actionlint
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v4.0.0
+    rev: v4.1.1
     hooks:
       - id: todo-check
         exclude: (?x)^(
@@ -57,3 +57,4 @@ repos:
       - id: spell-check-commit-msgs
       - id: mirror-auto-msg
       - id: version-txt-auto-msg
+      - id: list-untracked-files
