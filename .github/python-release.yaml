@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   tag-and-release:
-    uses: George-Ogden/actions/.github/workflows/python-release.yaml@v4.6.2
+    uses: George-Ogden/actions/.github/workflows/python-release.yaml@v4.6.3
     with:
       python-versions: "['3.14']"
       validation-code: "import module" # fixme: use correct module
