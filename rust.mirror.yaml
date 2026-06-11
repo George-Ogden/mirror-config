@@ -5,6 +5,7 @@ repos:
       - .github/workflows/lint.yaml: .github/rust-lint.yaml
       - .github/workflows/test.yaml: .github/rust-test.yaml
       - .github/workflows/release.yaml: .github/release.yaml
+      - .github/workflows/version-check.yaml: .github/rust-version-check.yaml
       - .semgrep-rules/rust.yaml
       - .gitignore: rust.gitignore
       - .pre-commit-config.yaml: rust.pre-commit-config.yaml
