@@ -110,7 +110,8 @@ repos:
       - id: todo-check
         exclude: (?x)^(
           .pre-commit-config.yaml|
-          .gitignore
+          .gitignore|
+          Cargo.toml
           )$
       - id: spell-check-commit-msgs
       - id: mirror-auto-msg
