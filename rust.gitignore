@@ -15,7 +15,7 @@ err.txt
 notes.txt
 refactor.list
 TODO
-profile.svg
+profile*.svg
 perf.data*
 *.pseudo
 *.patch
