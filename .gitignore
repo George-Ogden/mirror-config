@@ -1,19 +1,27 @@
 # Specific Files
-.harper-dictionary.txt
-plot*.pdf
-scratch*
-.merge_file*
-tmp.py
-log.txt
-stdout.txt
-out.txt
-stderr.txt
-err.txt
-notes.txt
-TODO
-*.pseudo
+
+# Common Files
 *.patch
+*.pseudo
+*.snap.new
+.harper-dictionary.txt
+.merge_file*
+TODO
+err.txt
+experiments/
+log.txt
+logs/
 nohup*
+notes.txt
+out.txt
+perf.data*
+plot*.pdf
+profile*.svg
+refactor.list
+scratch*
+stderr.txt
+stdout.txt
+tmp.py
 
 ### VisualStudioCode ###
 .vscode/*
