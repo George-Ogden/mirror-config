@@ -2,23 +2,28 @@ repos:
   - source: https://github.com/George-Ogden/mirror-config
     files:
       - .mirror.yaml: rust-python.mirror.yaml
+
       - .github/workflows/lint.yaml: .github/rust-lint.yaml
       - .github/workflows/test.yaml: .github/rust-test.yaml
-      - .semgrep-rules/rust.yaml
+      - .github/workflows/python-test.yaml: .github/python-test.yaml
+      - .github/workflows/release.yaml: .github/release.yaml
+      - .github/workflows/version-check.yaml: .github/rust-version-check.yaml
+
+      - README.md: template-README.md
+      - LICENSE
+      - version.txt
+
       - .gitignore: rust-python.gitignore
       - .pre-commit-config.yaml: rust-python.pre-commit-config.yaml
+      - .semgrep-rules/rust.yaml
+
       - src/main.rs: main.rs
       - Cargo.toml
       - Cargo.lock
       - clippy.toml
 
-      - README.md: template-README.md
-      - version.txt
-      - LICENSE
-
-      - pytest.ini
       - mypy.ini
-      - requirements.txt
+      - pytest.ini
       - requirements-dev.txt
+      - requirements.txt
       - ruff.toml
-      - .github/workflows/python-test.yaml: .github/python-test.yaml

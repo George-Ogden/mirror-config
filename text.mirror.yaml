@@ -2,10 +2,13 @@ repos:
   - source: https://github.com/George-Ogden/mirror-config
     files:
       - .mirror.yaml: text.mirror.yaml
-      - .github/workflows/release.yaml: .github/release.yaml
+
       - .github/workflows/lint.yaml
-      - .gitignore: .gitignore
-      - .pre-commit-config.yaml: text.pre-commit-config.yaml
+      - .github/workflows/release.yaml: .github/release.yaml
+
       - README.md: template-README.md
       - LICENSE
       - version.txt
+
+      - .gitignore: .gitignore
+      - .pre-commit-config.yaml: text.pre-commit-config.yaml
