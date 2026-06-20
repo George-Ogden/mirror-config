@@ -60,7 +60,6 @@ rules:
       fn deref(&self) -> &Self::Target {
           &self.$X
       }
-           #[should_panic]
 
   - id: missing-test-decorator
     languages:
@@ -86,4 +85,4 @@ rules:
           #[test_case(...)]
           fn $NAME(...) {
             ...
-          }          #[should_panic]
+          }
