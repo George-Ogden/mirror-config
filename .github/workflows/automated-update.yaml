@@ -65,6 +65,7 @@ jobs:
           prek autoupdate
           prek autoupdate -c python.pre-commit-config.yaml
           prek autoupdate -c rust.pre-commit-config.yaml
+          prek autoupdate -c rust-python.pre-commit-config.yaml
           prek autoupdate -c text.pre-commit-config.yaml
 
       - name: Update Ruff version in requirements-dev.txt
