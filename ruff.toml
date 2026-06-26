@@ -36,7 +36,6 @@ extend-ignore = [
   "PT013",  # flake8-pytest-style: pytest-incorrect-pytest-import
   "PYI041", # flake8-pyi: redundant-numeric-union
   "RET504", # flake8-return: unnecessary-assign
-  "RUF076", # Ruff-specific rules: pytest-fixture-autouse
   "S",      # flake8-bandit
   "SIM118", # flake8-simplify: in-dict-keys
   "TRY",    # tryceratops
