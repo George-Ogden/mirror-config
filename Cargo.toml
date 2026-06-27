@@ -25,7 +25,7 @@ workspace = true
 
 [workspace.lints.rust]
 warnings = "deny"
-dead_code = "allow"
+dead_code = "deny"
 
 [workspace.lints.clippy]
 correctness = { level = "deny", priority = -1 }
