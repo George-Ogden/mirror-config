@@ -78,12 +78,12 @@ repos:
       - id: actionlint
 
   - repo: https://github.com/codespell-project/codespell/
-    rev: v2.4.2
+    rev: v2.4.3
     hooks:
       - id: codespell
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.169.0
+    rev: v1.170.0
     hooks:
       - id: semgrep
         require_serial: true
