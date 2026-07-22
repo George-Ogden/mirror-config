@@ -83,7 +83,7 @@ repos:
       - id: codespell
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.170.0
+    rev: v1.170.1
     hooks:
       - id: semgrep
         require_serial: true
