@@ -91,6 +91,8 @@ repos:
           [
             --config,
             .semgrep-rules/rust.yaml,
+            --config,
+            .semgrep-rules/cargo.yaml,
             --autofix,
             --quiet,
             --error,
