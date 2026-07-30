@@ -1,3 +1,8 @@
 disallowed-methods = [
   { path = "std::iter::Iterator::zip", replacement = "itertools::Itertools::zip_eq" }
 ]
+
+disallowed-types = [
+  { path = "std::collections::HashMap", replacement = "fxhash::FxHashMap" },
+  { path = "std::collections::HashSet", replacement = "fxhash::FxHashSet" }
+]
