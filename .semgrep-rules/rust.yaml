@@ -54,7 +54,7 @@ rules:
     message: Manual `Deref` implementation. Use `#[derive(Deref)]` and `#[deref]` on the struct definition.
     pattern-inside: |
       impl ... Deref for ... {
-      ...
+        ...
       }
     pattern: |
       fn deref(&self) -> &Self::Target {
