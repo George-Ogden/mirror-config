@@ -39,7 +39,6 @@ rules:
           fn $X() {
             ...
           }
-
     fix-regex:
       regex: |
         #\[should_panic\]
@@ -52,14 +51,15 @@ rules:
       - rust
     severity: ERROR
     message: Manual `Deref` implementation. Use `#[derive(Deref)]` and `#[deref]` on the struct definition.
-    pattern-inside: |
-      impl ... Deref for ... {
-        ...
-      }
-    pattern: |
-      fn deref(&self) -> &Self::Target {
-          &self.$X
-      }
+    patterns:
+      - pattern-inside: |
+          impl Deref for $T {
+            ...
+          }
+      - pattern: |
+          fn deref(&self) -> &$U {
+            return &self.$X
+          }
 
   - id: missing-test-decorator
     languages:
