@@ -15,7 +15,7 @@ repos:
         args: [--assume-in-merge]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.172.0
+    rev: v1.173.0
     hooks:
       - id: semgrep
         require_serial: true
