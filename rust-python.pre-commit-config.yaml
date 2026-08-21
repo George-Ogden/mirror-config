@@ -89,7 +89,7 @@ repos:
         args: [--with-metadata, --fix]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.173.0
+    rev: v1.174.0
     hooks:
       - id: semgrep
         require_serial: true
@@ -118,7 +118,7 @@ repos:
         args: [--fix]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit/
-    rev: v0.16.3
+    rev: v0.16.4
     hooks:
       - id: ruff-check
         args: [--fix]
