@@ -23,7 +23,7 @@ repos:
         fail_fast: true
       - id: end-of-file-fixer
         stages: [pre-commit]
-        exclude: .rs$
+        exclude: \.rs$
       - id: mixed-line-ending
         stages: [pre-commit]
       - id: trailing-whitespace
@@ -38,7 +38,7 @@ repos:
     rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
-        exclude: .snap$
+        exclude: \.snap$
 
   - repo: https://github.com/scop/pre-commit-shfmt/
     rev: v3.13.1-1
@@ -124,9 +124,9 @@ repos:
       - id: dbg-check
       - id: todo-check
         exclude: (?x)^(
-          .pre-commit-config.yaml|
-          .gitignore|
-          Cargo.toml
+          \.pre-commit-config\.yaml|
+          \.gitignore|
+          Cargo\.toml
           )$
       - id: spell-check-commit-msgs
       - id: mirror-auto-msg

@@ -69,8 +69,8 @@ repos:
     hooks:
       - id: todo-check
         exclude: (?x)^(
-          .pre-commit-config.yaml|
-          .gitignore
+          \.pre-commit-config\.yaml|
+          \.gitignore
           )$
       - id: spell-check-commit-msgs
       - id: mirror-auto-msg
