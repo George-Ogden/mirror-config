@@ -110,6 +110,13 @@ repos:
     rev: v2.4.3
     hooks:
       - id: codespell
+        exclude: \.lock$
+        args:
+          - -f
+          - --regex
+          # Copied from https://github.com/codespell-project/codespell/issues/2730#issuecomment-1657006554.
+          - |
+            (?<![a-zà-öø-ÿ])[a-zà-öø-ÿ'`]+|[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ'`]*|[a-zà-öø-ÿ]+'[a-zà-öø-ÿ]*|[a-zà-öø-ÿ]+(?=[_-])|[a-zà-öø-ÿ]+(?=[A-ZÀ-ÖØ-Þ])|\d+
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
     rev: v4.1.1
