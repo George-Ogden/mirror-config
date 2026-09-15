@@ -89,7 +89,7 @@ repos:
       - id: dbg-check
       - id: todo-check
         exclude: (?x)^(
-          \.pre-commit-config.yaml|
+          \.pre-commit-config\.yaml|
           \.gitignore
           )$
       - id: mypy
