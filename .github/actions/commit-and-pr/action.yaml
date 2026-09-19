@@ -20,7 +20,7 @@ inputs:
   base-branch:
     description: Base branch for PR
     required: false
-    default: master
+    default: m
 
 runs:
   using: composite
