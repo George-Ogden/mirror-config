@@ -35,7 +35,7 @@ repos:
         args: [--assume-in-merge]
 
   - repo: https://github.com/rbubley/mirrors-prettier/
-    rev: v3.9.7
+    rev: v3.9.8
     hooks:
       - id: prettier
         exclude: \.snap$
