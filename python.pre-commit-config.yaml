@@ -63,7 +63,7 @@ repos:
         args: [--config, format.skip-magic-trailing-comma = true]
 
   - repo: https://github.com/rbubley/mirrors-prettier/
-    rev: v3.9.8
+    rev: v3.9.9
     hooks:
       - id: prettier
 
