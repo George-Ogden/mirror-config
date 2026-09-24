@@ -36,7 +36,7 @@ repos:
         args: [--assume-in-merge]
 
   - repo: https://github.com/rbubley/mirrors-prettier/
-    rev: v3.9.8
+    rev: v3.9.9
     hooks:
       - id: prettier
         exclude: \.snap$
@@ -90,7 +90,7 @@ repos:
         args: [--with-metadata, --fix]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.177.0
+    rev: v1.178.0
     hooks:
       - id: semgrep
         require_serial: true
