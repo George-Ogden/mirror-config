@@ -153,3 +153,14 @@ rules:
     fix-regex:
       regex: (\d+)\.0(_?(f32|f64))?
       replacement: \1
+
+  - id: t-iterator-type-parameter
+    languages:
+      - rust
+    severity: ERROR
+    message: "`T` is often the default name, but use another letter (preferably `I`) instead."
+    pattern-either:
+      - pattern: |
+          fn $NAME<T: IntoIterator>(...) {...}
+      - pattern: |
+          fn $NAME<T: Iterator>(...) {...}
