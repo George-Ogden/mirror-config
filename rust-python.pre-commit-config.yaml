@@ -62,6 +62,7 @@ repos:
     rev: v1.2.1
     hooks:
       - id: clippy
+        alias: clippy-fix
         stages: [pre-commit]
         name: clippy fix
         args:
@@ -76,10 +77,12 @@ repos:
             unused_variables,
           ]
       - id: fmt
+        alias: rustfmt
         stages: [pre-commit]
       - id: cargo-check
         stages: [pre-commit]
       - id: clippy
+        alias: clippy-check
         stages: [pre-commit]
         args: [--all-targets, --workspace]
 
