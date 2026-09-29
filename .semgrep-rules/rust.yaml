@@ -164,3 +164,29 @@ rules:
           fn $NAME<T: IntoIterator>(...) {...}
       - pattern: |
           fn $NAME<T: Iterator>(...) {...}
+
+  - id: pub-test
+    languages:
+      - generic
+    severity: ERROR
+    message: "`pub` visibility on a test function (remove)."
+    paths:
+      include:
+        - "*.rs"
+    options:
+      generic_ellipsis_max_span: 0
+    patterns:
+      - pattern-either:
+          - pattern: |
+              #[test]
+              pub fn ...
+          - pattern: |
+              #[test]
+              #[should_panic]
+              pub fn ...
+          - pattern: |
+              #[test_case(...)]
+              pub fn ...
+          - pattern: |
+              #[test_matrix(...)]
+              pub fn ...
