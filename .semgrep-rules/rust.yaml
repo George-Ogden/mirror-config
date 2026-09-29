@@ -99,6 +99,11 @@ rules:
           fn $NAME(...) {
             ...
           }
+      - pattern-not: |
+          #[test_matrix(...)]
+          fn $NAME(...) {
+            ...
+          }
       - pattern-not-inside: |
           impl $ANY {
             ...
