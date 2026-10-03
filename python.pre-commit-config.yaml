@@ -31,6 +31,22 @@ repos:
         stages: [pre-commit]
         args: [--assume-in-merge]
 
+  - repo: https://github.com/semgrep/pre-commit/
+    rev: v1.179.0
+    hooks:
+      - id: semgrep
+        require_serial: true
+        args:
+          [
+            --config,
+            .semgrep-rules/python.yaml,
+            --autofix,
+            --quiet,
+            --error,
+            --skip-unknown-extensions,
+            --disable-version-check,
+          ]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks/
     rev: v6.0.0
     hooks:

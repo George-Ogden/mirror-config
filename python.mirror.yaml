@@ -13,6 +13,7 @@ repos:
 
       - .gitignore: python.gitignore
       - .pre-commit-config.yaml: python.pre-commit-config.yaml
+      - .semgrep-rules/python.yaml
 
       - mypy.ini
       - pyproject.toml
