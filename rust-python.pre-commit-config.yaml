@@ -144,6 +144,7 @@ repos:
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
     rev: v4.1.1
     hooks:
+      - id: absolute-imports-check
       - id: dbg-check
       - id: todo-check
         exclude: (?x)^(
