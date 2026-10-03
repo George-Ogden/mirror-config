@@ -70,6 +70,22 @@ repos:
       - id: shellcheck
         args: [--severity=warning]
 
+  - repo: https://github.com/semgrep/pre-commit/
+    rev: v1.178.0
+    hooks:
+      - id: semgrep
+        require_serial: true
+        args:
+          [
+            --config,
+            .semgrep-rules/pre-commit.yaml,
+            --autofix,
+            --quiet,
+            --error,
+            --skip-unknown-extensions,
+            --disable-version-check,
+          ]
+
   - repo: https://github.com/astral-sh/ruff-pre-commit/
     rev: v0.16.10
     hooks:

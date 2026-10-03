@@ -103,6 +103,8 @@ repos:
             .semgrep-rules/rust.yaml,
             --config,
             .semgrep-rules/cargo.yaml,
+            --config,
+            .semgrep-rules/pre-commit.yaml,
             --autofix,
             --quiet,
             --error,

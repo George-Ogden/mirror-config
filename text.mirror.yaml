@@ -12,3 +12,4 @@ repos:
 
       - .gitignore: .gitignore
       - .pre-commit-config.yaml: text.pre-commit-config.yaml
+      - .semgrep-rules/pre-commit.yaml

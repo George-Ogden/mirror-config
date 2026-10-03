@@ -105,6 +105,8 @@ repos:
             .semgrep-rules/cargo.yaml,
             --config,
             .semgrep-rules/python.yaml,
+            --config,
+            .semgrep-rules/pre-commit.yaml,
             --autofix,
             --quiet,
             --error,
