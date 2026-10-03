@@ -4,6 +4,9 @@ rules:
       - yaml
     severity: ERROR
     message: Make sure url ends with a trailing slash.
+    paths:
+      include:
+        - "**/*.pre-commit-config.yaml"
     patterns:
       - pattern: |
           repo: "$URL"

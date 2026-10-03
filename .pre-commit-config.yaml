@@ -22,7 +22,7 @@ repos:
         args:
           [
             --config,
-            .semgrep-rules/yaml.yaml,
+            .semgrep-rules/pre-commit.yaml,
             --autofix,
             --quiet,
             --error,
