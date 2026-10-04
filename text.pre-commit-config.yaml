@@ -44,7 +44,7 @@ repos:
         args: [--severity=warning]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.178.0
+    rev: v1.179.0
     hooks:
       - id: semgrep
         require_serial: true
