@@ -132,6 +132,7 @@ repos:
             --skip-unknown-extensions,
             --disable-version-check,
           ]
+        exclude: ^\.semgrep-rules/
 
   - repo: https://github.com/pre-commit/pre-commit-hooks/
     rev: v6.0.0
