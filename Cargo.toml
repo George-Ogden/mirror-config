@@ -16,12 +16,12 @@ opt-level = 3
 inherits = "release"
 debug = true
 
+[lints]
+workspace = true
+
 [workspace]
 members = []
 resolver = "2"
-
-[lints]
-workspace = true
 
 [workspace.lints.rust]
 warnings = "deny"

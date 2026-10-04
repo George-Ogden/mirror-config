@@ -86,6 +86,16 @@ repos:
         stages: [pre-commit]
         args: [--all-targets, --workspace]
 
+  - repo: https://github.com/DevinR528/cargo-sort/
+    rev: v2.1.4
+    hooks:
+      - id: cargo-sort
+        args:
+          - --grouped
+          - --workspace
+          - --config
+          - .cargo/toolfmt.toml
+
   - repo: local
     hooks:
       - id: cargo-shear

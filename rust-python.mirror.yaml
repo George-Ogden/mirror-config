@@ -15,6 +15,7 @@ repos:
 
       - .gitignore: rust-python.gitignore
       - .pre-commit-config.yaml: rust-python.pre-commit-config.yaml
+      - .cargo/toolfmt.toml
       - .semgrep-rules/rust.yaml
       - .semgrep-rules/cargo.yaml
       - .semgrep-rules/python.yaml
