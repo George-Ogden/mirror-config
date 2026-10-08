@@ -112,7 +112,7 @@ repos:
         additional_dependencies: ["cli:cargo-shear"]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.179.0
+    rev: v1.180.0
     hooks:
       - id: semgrep
         require_serial: true
