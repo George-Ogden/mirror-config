@@ -86,6 +86,13 @@ repos:
         stages: [pre-commit]
         args: [--all-targets, --workspace]
 
+  - repo: https://github.com/tombi-toml/tombi-pre-commit/
+    rev: v1.7.1
+    hooks:
+      - id: tombi-format
+        alias: tombi
+        exclude: \.lock$
+
   - repo: https://github.com/DevinR528/cargo-sort/
     rev: v2.1.4
     hooks:

@@ -13,6 +13,7 @@ repos:
 
       - .gitignore: python.gitignore
       - .pre-commit-config.yaml: python.pre-commit-config.yaml
+      - tombi.toml
       - .semgrep-rules/python.yaml
       - .semgrep-rules/pre-commit.yaml
 
