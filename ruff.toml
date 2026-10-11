@@ -26,7 +26,7 @@ extend-select = [
   "trailing-comma-on-bare-tuple",
 ]
 
-extend-ignore = [
+ignore = [
   "S",  # "flake8-bandit"
   "TRY",  # tryceratops
   "any-type",
@@ -44,7 +44,7 @@ extend-ignore = [
   "useless-import-alias",
 ]
 
-extend-unfixable = [
+unfixable = [
   "batched-without-explicit-strict",
   "map-without-explicit-strict",
   "zip-without-explicit-strict",
