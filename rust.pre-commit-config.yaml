@@ -6,7 +6,7 @@ ci:
   skip:
     - mirror-check
     - no-commit-to-branch
-    - fmt
+    - rustfmt
     - cargo-check
     - clippy
 
