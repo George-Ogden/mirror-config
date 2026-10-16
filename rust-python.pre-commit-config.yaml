@@ -87,7 +87,7 @@ repos:
         args: [--all-targets, --workspace]
 
   - repo: https://github.com/tombi-toml/tombi-pre-commit/
-    rev: v1.8.2
+    rev: v1.8.5
     hooks:
       - id: tombi-format
         alias: tombi
@@ -153,7 +153,7 @@ repos:
         args: [--fix]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit/
-    rev: v0.17.0
+    rev: v0.17.1
     hooks:
       - id: ruff-check
         args: [--fix]
