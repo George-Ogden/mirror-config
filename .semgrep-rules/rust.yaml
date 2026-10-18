@@ -311,3 +311,11 @@ rules:
             sorted
             )$
     fix: $Y(&$X)
+
+  - id: into-iter-map
+    languages:
+      - rust
+    severity: ERROR
+    message: Use `utils::map_into` method.
+    pattern: $X.into_iter().map($F)
+    fix: $X.into_map($F)
