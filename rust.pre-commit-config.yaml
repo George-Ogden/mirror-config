@@ -87,7 +87,7 @@ repos:
         args: [--all-targets, --workspace]
 
   - repo: https://github.com/tombi-toml/tombi-pre-commit/
-    rev: v1.8.9
+    rev: v1.8.10
     hooks:
       - id: tombi-format
         alias: tombi
@@ -119,7 +119,7 @@ repos:
         additional_dependencies: ["cli:cargo-shear"]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.182.0
+    rev: v1.181.1
     hooks:
       - id: semgrep
         require_serial: true

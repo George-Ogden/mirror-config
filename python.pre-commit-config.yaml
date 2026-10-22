@@ -32,7 +32,7 @@ repos:
         args: [--assume-in-merge]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.182.0
+    rev: v1.181.1
     hooks:
       - id: semgrep
         require_serial: true
@@ -87,7 +87,7 @@ repos:
       - id: prettier
 
   - repo: https://github.com/tombi-toml/tombi-pre-commit/
-    rev: v1.8.9
+    rev: v1.8.10
     hooks:
       - id: tombi-format
         alias: tombi
