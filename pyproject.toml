@@ -27,6 +27,7 @@ test = [
   { include-group = "utils" },
 ]
 lint = [
+  "linter==2.1.1",
   "prek",
   "ruff==0.17.2",
   "semgrep==1.181.1",
@@ -47,10 +48,11 @@ docs = [
 ]
 
 [tool.uv.sources]
-mypy-pytest-plugin = { git = "https://github.com/George-Ogden/mypy-pytest" }
 extra-type-helpers = { git = "https://github.com/George-Ogden/extra-types" }
 georges-utils = { git = "https://github.com/George-Ogden/utils" }
+linter = { git = "https://github.com/George-Ogden/linter/" }
 mirror-rorrim = { git = "https://github.com/George-Ogden/mirror-rorrim" }
+mypy-pytest-plugin = { git = "https://github.com/George-Ogden/mypy-pytest" }
 pytest-dbg = { git = "https://github.com/George-Ogden/pytest-dbg" }
 
 [tool.setuptools.dynamic]
