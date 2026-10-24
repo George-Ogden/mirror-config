@@ -31,4 +31,3 @@ repos:
       - mypy.ini
       - pytest.ini
       - ruff.toml
-      - uv.lock

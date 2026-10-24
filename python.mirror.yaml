@@ -22,4 +22,3 @@ repos:
       - pyproject.toml
       - pytest.ini
       - ruff.toml
-      - uv.lock
