@@ -78,6 +78,7 @@ jobs:
           updates = {
               "https://github.com/astral-sh/ruff-pre-commit/": "ruff",
               "https://github.com/semgrep/pre-commit/": "semgrep",
+              "https://github.com/George-Ogden/linter/": "linter",
           }
 
           for repo in config["repos"]:
