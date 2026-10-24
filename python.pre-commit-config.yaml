@@ -27,6 +27,7 @@ repos:
         stages: [pre-commit]
       - id: check-added-large-files
         stages: [pre-commit]
+        exclude: ^uv\.lock$
       - id: check-merge-conflict
         stages: [pre-commit]
         args: [--assume-in-merge]
