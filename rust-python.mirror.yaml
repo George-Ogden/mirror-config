@@ -6,6 +6,7 @@ repos:
       - .github/workflows/lint.yaml: .github/rust-lint.yaml
       - .github/workflows/test.yaml: .github/rust-test.yaml
       - .github/workflows/python-test.yaml: .github/python-test.yaml
+      - .github/workflows/mypy.yaml: .github/mypy.yaml
       - .github/workflows/release.yaml: .github/release.yaml
       - .github/workflows/version-check.yaml: .github/rust-version-check.yaml
 
