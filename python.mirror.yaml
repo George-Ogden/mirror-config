@@ -20,6 +20,5 @@ repos:
       - mypy.ini
       - pyproject.toml
       - pytest.ini
-      - requirements-dev.txt
-      - requirements.txt
       - ruff.toml
+      - uv.lock
