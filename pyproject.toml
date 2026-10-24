@@ -29,7 +29,7 @@ test = [
 lint = [
   "prek",
   "ruff==0.17.2",
-  "semgrep",
+  "semgrep==1.181",
 ]
 types = [
   "mypy",
