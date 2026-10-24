@@ -24,7 +24,6 @@ repos:
             --config,
             .semgrep-rules/pre-commit.yaml,
             --autofix,
-            --quiet,
             --error,
             --skip-unknown-extensions,
             --disable-version-check,
