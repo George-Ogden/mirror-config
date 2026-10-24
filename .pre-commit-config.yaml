@@ -27,6 +27,7 @@ repos:
             --error,
             --skip-unknown-extensions,
             --disable-version-check,
+            -j1,
           ]
         exclude: ^\.semgrep-rules/
 
