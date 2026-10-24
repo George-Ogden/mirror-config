@@ -50,11 +50,6 @@ repos:
           ]
         exclude: ^\.semgrep-rules/
 
-  - repo: https://github.com/pre-commit/pre-commit-hooks/
-    rev: v6.0.0
-    hooks:
-      - id: requirements-txt-fixer
-
   - repo: https://github.com/George-Ogden/linter/
     rev: v2.1.1
     hooks:
