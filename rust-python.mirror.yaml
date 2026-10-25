@@ -28,6 +28,7 @@ repos:
       - Cargo.lock
       - clippy.toml
 
+      - pyproject.toml
       - mypy.ini
       - pytest.ini
       - ruff.toml
