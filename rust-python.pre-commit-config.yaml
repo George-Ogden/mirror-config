@@ -12,7 +12,7 @@ ci:
 
 repos:
   - repo: https://github.com/George-Ogden/mirror-rorrim/
-    rev: v0.4.10
+    rev: v0.4.11
     hooks:
       - id: mirror-check
         fail_fast: true
@@ -88,7 +88,7 @@ repos:
         args: [--all-targets, --workspace]
 
   - repo: https://github.com/tombi-toml/tombi-pre-commit/
-    rev: v1.9.5
+    rev: v1.9.6
     hooks:
       - id: tombi-format
         alias: tombi

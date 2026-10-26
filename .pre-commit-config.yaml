@@ -37,7 +37,7 @@ repos:
       - id: prettier
 
   - repo: https://github.com/tombi-toml/tombi-pre-commit/
-    rev: v1.9.5
+    rev: v1.9.6
     hooks:
       - id: tombi-format
         alias: tombi
@@ -51,7 +51,7 @@ repos:
         exclude: ^\.github/actions/
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v4.1.1
+    rev: v5.1.0
     hooks:
       - id: spell-check-commit-msgs
       - id: list-untracked-files
