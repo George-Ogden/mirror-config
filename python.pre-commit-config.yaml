@@ -107,9 +107,11 @@ repos:
             (?<![a-zà-öø-ÿ])[a-zà-öø-ÿ'`]+|[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ'`]*|[a-zà-öø-ÿ]+'[a-zà-öø-ÿ]*|[a-zà-öø-ÿ]+(?=[_-])|[a-zà-öø-ÿ]+(?=[A-ZÀ-ÖØ-Þ])|\d+
 
   - repo: https://github.com/George-Ogden/pre-commit-hooks/
-    rev: v4.1.1
+    rev: v5.1.0
     hooks:
       - id: absolute-imports-check
+      - id: ty-check
+        args: [--error-on-warning]
       - id: dbg-check
       - id: todo-check
         exclude: (?x)^(
