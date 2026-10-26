@@ -1,6 +1,6 @@
 [project]
 name = "untitled"  # fixme: add project name
-requires-python = ">=3.12,<3.15"
+requires-python = ">=3.12,<3.16"
 authors = [{ name = "George Ogden" }]
 license-files = ["LICENSE"]
 readme = "README.md"
