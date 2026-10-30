@@ -1,6 +1,10 @@
 default_stages: [pre-commit]
 default_install_hook_types: [pre-commit, commit-msg]
 
+ci:
+  skip:
+    - semgrep
+
 repos:
   - repo: builtin
     hooks:
