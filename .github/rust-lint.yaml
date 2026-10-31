@@ -11,6 +11,8 @@ on:
 jobs:
   prek-lint:
     uses: George-Ogden/actions/.github/workflows/lint.yaml@v5.2.1
+    with:
+      python-version: "3.14"
 
   cargo-lint:
     uses: George-Ogden/actions/.github/workflows/rust-lint.yaml@v5.2.1
