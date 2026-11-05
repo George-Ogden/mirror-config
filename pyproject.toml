@@ -35,7 +35,7 @@ lint = [
 types = [
   "mypy",
   "mypy-pytest-plugin ; python_full_version >= '3.12'",
-  "ty==0.0.96",
+  "ty==0.0.97",
   { include-group = "test" },
 ]
 utils = [
