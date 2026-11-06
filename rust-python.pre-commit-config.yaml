@@ -120,7 +120,7 @@ repos:
         additional_dependencies: ["cli:cargo-shear"]
 
   - repo: https://github.com/semgrep/pre-commit/
-    rev: v1.183.0
+    rev: v1.184.0
     hooks:
       - id: semgrep
         require_serial: true
@@ -149,7 +149,7 @@ repos:
         args: [--fix]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit/
-    rev: v0.17.3
+    rev: v0.17.4
     hooks:
       - id: ruff-check
         args: [--fix]
