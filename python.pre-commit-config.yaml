@@ -12,7 +12,6 @@ repos:
     rev: v0.4.11
     hooks:
       - id: mirror-check
-        fail_fast: true
 
   - repo: builtin
     hooks:
