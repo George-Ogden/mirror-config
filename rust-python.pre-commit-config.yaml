@@ -94,7 +94,7 @@ repos:
         exclude: \.lock$
 
   - repo: https://github.com/DevinR528/cargo-sort/
-    rev: v2.1.4
+    rev: v2.1.5
     hooks:
       - id: cargo-sort
         args:
@@ -148,7 +148,7 @@ repos:
         args: [--fix]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit/
-    rev: v0.17.5
+    rev: v0.17.6
     hooks:
       - id: ruff-check
         args: [--fix]
