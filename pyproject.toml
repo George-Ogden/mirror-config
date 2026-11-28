@@ -16,6 +16,7 @@ dev = [
   "mirror-rorrim ; python_full_version >= '3.12'",
   "py-spy",
   { include-group = "lint" },
+  { include-group = "neovim" },
   { include-group = "test" },
   { include-group = "types" },
 ]
@@ -41,6 +42,15 @@ types = [
 utils = [
   "extra-type-helpers ; python_full_version >= '3.12'",
   "georges-utils ; python_full_version >= '3.12'",
+]
+neovim = [
+  "debugpy",
+  "ipykernel",
+  "jupyter-client",
+  "nbformat",
+  "plotly<7",
+  "pynvim",
+  "ueberzug",
 ]
 docs = [
   "mkdocs<2",
