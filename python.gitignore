@@ -3,6 +3,8 @@
 # Common Files
 *.sqlite
 *.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
 *.db
 *.patch
 *.pseudo
